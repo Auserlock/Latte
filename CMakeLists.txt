@@ -7,18 +7,18 @@ file(GLOB_RECURSE LATTE_HEADER_FILES
         ${CMAKE_SOURCE_DIR}/include/*.hpp
 )
 file(GLOB_RECURSE UTIL_SOURCE_FILES
-        ${CMAKE_SOURCE_DIR}/src/util/*.cpp
+        ${CMAKE_SOURCE_DIR}/src/util/*.cc
 )
 file(GLOB_RECURSE CORE_SOURCE_FILES
-        ${CMAKE_SOURCE_DIR}/src/core/*.cpp
+        ${CMAKE_SOURCE_DIR}/src/core/*.cc
 )
 
 add_library(
         LatteDependency
+        SHARED
         ${CORE_SOURCE_FILES}
         ${UTIL_SOURCE_FILES}
         ${LATTE_HEADER_FILES}
-        src/core/memory.cpp
 )
 
 target_include_directories(
